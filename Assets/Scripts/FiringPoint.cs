@@ -11,6 +11,7 @@ public class FiringPoint : MonoBehaviour
     [Header("Raycast Projectiles")]
     public GameObject hitSparks;
     public LineRenderer laser;
+    public GameObject raycastTriggerZone;
 
     void Update()
     {
@@ -53,6 +54,23 @@ public class FiringPoint : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
             }
+
+            //If the inSphere bool is true, then everything in the nest will occur 
+            if(raycastTriggerZone.GetComponent<RaycastTriggerPad>().inSphere)
+            {
+                //When the raycast hits the game object tagged sphere
+                if (hit.collider.CompareTag("Sphere"))
+                {
+                    //Referencing the function created in the raycast trigger pad script which will cycle through the property changes
+                    raycastTriggerZone.GetComponent<RaycastTriggerPad>().PropertySwitch();
+                }
+
+
+            }
+            
+                
+
+
         }
     }
 
