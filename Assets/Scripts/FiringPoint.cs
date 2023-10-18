@@ -13,6 +13,7 @@ public class FiringPoint : MonoBehaviour
     public LineRenderer laser;
     public GameObject raycastTriggerZone;
 
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -20,8 +21,12 @@ public class FiringPoint : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
             FireRaycast();
+
     }
 
+    
+    
+    
     void FireRigidBody()
     {
         //Create a reference to hold our instantiated object
