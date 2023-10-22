@@ -11,6 +11,7 @@ public class FiringPoint : MonoBehaviour
 
     public float projectileIndicator;
     public GameObject[] projectiles;
+    public float projectileSpeed = 1000f;
 
     [Header("Raycast Projectiles")]
     public GameObject hitSparks;
@@ -25,8 +26,8 @@ public class FiringPoint : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetButtonDown("Fire1"))
-            FireRigidBody();*/
+        if (Input.GetButtonDown("Fire1"))
+            FireRigidBody();
 
         if (Input.GetButtonDown("Fire2"))
             FireRaycast();
@@ -56,16 +57,19 @@ public class FiringPoint : MonoBehaviour
     }
     
     
-    /*void FireRigidBody()
+    void FireRigidBody()
     {
         //Create a reference to hold our instantiated object
         GameObject projectileInstance;
         //Instantiate our projectile at this objects position and rotation
-        projectileInstance = Instantiate(projectileGreenOrb, transform.position, transform.rotation);
+        projectileInstance = Instantiate(projectiles[0], transform.position, transform.rotation);
+        projectileInstance = Instantiate(projectiles[1], transform.position, transform.rotation);
+        projectileInstance = Instantiate(projectiles[2], transform.position, transform.rotation);
         //Add force to the projectile
         projectileInstance.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
+        
 
-    }*/
+    }
 
     void FireRaycast()
     {

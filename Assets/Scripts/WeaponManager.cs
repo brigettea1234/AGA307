@@ -6,12 +6,10 @@ public class WeaponManager : MonoBehaviour
 {
     public float weaponIndicator;
     public GameObject[] weapons;
-    
 
     void Start()
     {
         SwitchWeapons(0);
-        
 
     }
     
@@ -25,7 +23,6 @@ public class WeaponManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha3))
         SwitchWeapons(0);
-
         
     }
 
