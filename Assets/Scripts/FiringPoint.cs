@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class FiringPoint : MonoBehaviour
 {
-    [Header("Rigidbody Projectiles")]
+    /*[Header("Rigidbody Projectiles")]
     public GameObject projectileGreenOrb;
-    public float projectileSpeed = 1000f;
+    public float projectileSpeed = 1000f;*/
+    
+
+    public float projectileIndicator;
+    public GameObject[] projectiles;
 
     [Header("Raycast Projectiles")]
     public GameObject hitSparks;
@@ -14,20 +18,45 @@ public class FiringPoint : MonoBehaviour
     public GameObject raycastTriggerZone;
 
 
+    void Start()
+    {
+        SwitchProjectiles(0);
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-            FireRigidBody();
+        /*if (Input.GetButtonDown("Fire1"))
+            FireRigidBody();*/
 
         if (Input.GetButtonDown("Fire2"))
             FireRaycast();
+    
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        SwitchProjectiles(1);
 
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        SwitchProjectiles(2);
+
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        SwitchProjectiles(0);
     }
 
+    public void SwitchProjectiles(int index)
+    {
+        for(int i = 0; i < projectiles.Length; i++)
+        //Disables all weapons
+        projectiles[i].SetActive(false);
+
+        projectiles[index].SetActive(true);
+
+        projectileIndicator = index;
+
+        print("Current projectile: " + projectileIndicator);
+
+    }
     
     
-    
-    void FireRigidBody()
+    /*void FireRigidBody()
     {
         //Create a reference to hold our instantiated object
         GameObject projectileInstance;
@@ -36,7 +65,7 @@ public class FiringPoint : MonoBehaviour
         //Add force to the projectile
         projectileInstance.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
 
-    }
+    }*/
 
     void FireRaycast()
     {

@@ -373,10 +373,11 @@ MonoBehaviour:
   - {fileID: 1324031800}
   - {fileID: 1288220309}
   - {fileID: 201002751}
-  weaponName:
-  - RedWeapon
-  - BlueWeapon
-  - OrangeWeapon
+  projectileIndicator: 0
+  projectiles:
+  - {fileID: 947250871755532473, guid: 473d079eb020ad24184a63656bf54144, type: 3}
+  - {fileID: 7624496878921423553, guid: 7ba892263bec55a45b3073eb74e7dc9a, type: 3}
+  - {fileID: 4771011118064378264, guid: d5a339be31649b643a20c1f600720768, type: 3}
 --- !u!1 &201002751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3430311720407132136, guid: 4d87e7418f0c741d7812e400f18c9b08, type: 3}
