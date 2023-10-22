@@ -253,6 +253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
 --- !u!4 &57583858 stripped
@@ -373,11 +377,6 @@ MonoBehaviour:
   - {fileID: 1324031800}
   - {fileID: 1288220309}
   - {fileID: 201002751}
-  projectileIndicator: 0
-  projectiles:
-  - {fileID: 947250871755532473, guid: 473d079eb020ad24184a63656bf54144, type: 3}
-  - {fileID: 7624496878921423553, guid: 7ba892263bec55a45b3073eb74e7dc9a, type: 3}
-  - {fileID: 4771011118064378264, guid: d5a339be31649b643a20c1f600720768, type: 3}
 --- !u!1 &201002751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3430311720407132136, guid: 4d87e7418f0c741d7812e400f18c9b08, type: 3}
@@ -591,14 +590,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501173151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.766, z: 1.239}
+  m_LocalRotation: {x: -0.11437564, y: -0, z: -0, w: 0.9934376}
+  m_LocalPosition: {x: 0, y: -0.65, z: 1.239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -13.135, y: 0, z: 0}
 --- !u!114 &501173153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,8 +610,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33331415de4d0a248a1f56de7239e575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileGreenOrb: {fileID: 2822517433721222746, guid: b2b94c2375b63594994dd7b0cd74eee4, type: 3}
+  projectileIndicator: 0
+  projectiles:
+  - {fileID: 947250871755532473, guid: 473d079eb020ad24184a63656bf54144, type: 3}
+  - {fileID: 7624496878921423553, guid: 7ba892263bec55a45b3073eb74e7dc9a, type: 3}
+  - {fileID: 4771011118064378264, guid: d5a339be31649b643a20c1f600720768, type: 3}
   projectileSpeed: 1000
+  hitSparksProjectiles: []
   hitSparks: {fileID: 8652319566727268765, guid: 5b66f1485b200924d9bb87052fd6c380, type: 3}
   laser: {fileID: 2031235681}
   raycastTriggerZone: {fileID: 702770747}
@@ -1435,6 +1439,10 @@ PrefabInstance:
     - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_Name
       value: SpawnPoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
@@ -2288,6 +2296,10 @@ PrefabInstance:
     - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}

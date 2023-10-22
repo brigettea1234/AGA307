@@ -45,4 +45,5 @@ public class TargetManager : MonoBehaviour
     {
         print("Number of targets: " + targets.Count);
     }
+    
 }

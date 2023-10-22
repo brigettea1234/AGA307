@@ -12,6 +12,7 @@ public class FiringPoint : MonoBehaviour
     public float projectileIndicator;
     public GameObject[] projectiles;
     public float projectileSpeed = 1000f;
+    public GameObject[] hitSparksProjectiles;
 
     [Header("Raycast Projectiles")]
     public GameObject hitSparks;

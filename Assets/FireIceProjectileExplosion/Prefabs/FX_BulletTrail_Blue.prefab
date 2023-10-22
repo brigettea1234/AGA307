@@ -24191,13 +24191,14 @@ GameObject:
   - component: {fileID: 4868999187517079738}
   - component: {fileID: -4396727946183594838}
   - component: {fileID: 539933589609696075}
+  - component: {fileID: -4946224267924961370}
   m_Layer: 0
   m_Name: FX_BulletTrail_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4868999187517079738
 Transform:
   m_ObjectHideFlags: 0
@@ -24247,3 +24248,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4946224267924961370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624496878921423553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c2618865c7db04f8fa754cea5bec04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
