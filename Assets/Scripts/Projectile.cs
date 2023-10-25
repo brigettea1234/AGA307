@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
             //Change the colour of the target
             collision.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
             ////Destroy the target after 1 second
-            Destroy(collision.gameObject, 1);
+            //Destroy(collision.gameObject, 1);
             ////Destroy this object
             //Destroy(this.gameObject);
             

@@ -7,9 +7,14 @@ public class Target : MonoBehaviour
     public TargetManager _TM;
     public TargetSize myTargetSize;
     float scaleFactor = 1;
-    float moveDistance = 1000;
+    float moveDistance = 350;
+    public float myDistance = 1;
+
     public float mySpeed = 1f;
     float baseSpeed = 2f;
+
+    int baseHealth = 1;     //HEEEEEEELLLLLLLLPPPPPPPPPPP
+    public int health;
 
     void Start()
     {
@@ -19,16 +24,22 @@ public class Target : MonoBehaviour
         switch(myTargetSize)
         {
             case TargetSize.Small:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor / 2;
+                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor;
                 mySpeed = baseSpeed * 3;
+                health = baseHealth;
+                //myDistance = moveDistance;
                 break;
             case TargetSize.Medium:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor;
+                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor * 2;
                 mySpeed = baseSpeed * 2;
+                health = baseHealth * 3;
+                //myDistance = moveDistance * 2;
                 break;
             case TargetSize.Large:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor * 2;
+                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor * 3;
                 mySpeed = baseSpeed;
+                health = baseHealth * 5;
+                //myDistance = moveDistance * 4;
                 break;
 
         }
@@ -48,10 +59,7 @@ public class Target : MonoBehaviour
         StartCoroutine(Move());
     }
 
-
-    
-    
-    /*public int health = 5;
+    //public int health = 5;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -60,5 +68,5 @@ public class Target : MonoBehaviour
         //Destroy the gameObject if the health is < or = to 0
         else Destroy(gameObject);
 
-    }*/
+    }
 }
