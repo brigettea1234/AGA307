@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TargetSize {Small, Medium, Large}
+
 public class TargetManager : MonoBehaviour
 {
     public Transform[] spawnPoints;
@@ -12,6 +14,7 @@ public class TargetManager : MonoBehaviour
    public void Start()
     {
         SpawnAtRandom();
+        
     }
 
     public void Update()
