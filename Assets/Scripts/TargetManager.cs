@@ -22,6 +22,15 @@ public class TargetManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I))
         SpawnAtRandom();
+
+        if(Input.GetKeyDown(KeyCode.R))
+            ChangeTargetSize();
+    }
+
+    void ChangeTargetSize()
+    {
+        
+        //transform.localScale = Random.Range(0, targetTypes.Length);
     }
 
     public void SpawnTargets()

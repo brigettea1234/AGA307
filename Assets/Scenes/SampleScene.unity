@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550512, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.67
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550512, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -255,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
@@ -557,9 +557,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TM: {fileID: 0}
   myTargetSize: 0
+  myPatrol: 0
   myDistance: 100
   mySpeed: 1
   health: 0
+  moveToPos: {fileID: 0}
 --- !u!1 &474314214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2545494667495897440, guid: 213b9dad7c93a48fcb32727e579f169c, type: 3}
@@ -1406,11 +1408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550512, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.56
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550512, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.72
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550512, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1446,7 +1448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2709666820411550516, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5c6ec6a555544f758b7cbe152264a2c, type: 3}
@@ -2011,9 +2013,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TM: {fileID: 0}
   myTargetSize: 0
+  myPatrol: 0
   myDistance: 100
   mySpeed: 1
   health: 0
+  moveToPos: {fileID: 0}
 --- !u!1 &2011669685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,9 +2131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TM: {fileID: 0}
   myTargetSize: 0
+  myPatrol: 0
   myDistance: 100
   mySpeed: 1
   health: 0
+  moveToPos: {fileID: 0}
 --- !u!120 &2031235681 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 7582728831163063878, guid: 1c236994a7a8f4d4f95359f2f5c05744, type: 3}

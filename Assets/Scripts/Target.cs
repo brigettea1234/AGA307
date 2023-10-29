@@ -69,7 +69,15 @@ public class Target : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             StopAllCoroutines();
+
+        //if(Input.GetKeyDown(KeyCode.R))
+            //ChangeTargetSize();
     }
+
+    /*void ChangeTargetSize()
+    {
+        transform.localScale = Random.Range(0, 3);
+    }*/
 
     IEnumerator Move()
     {
@@ -89,7 +97,7 @@ public class Target : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
                 
         StartCoroutine(Move());
         
