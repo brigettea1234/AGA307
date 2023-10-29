@@ -14,12 +14,16 @@ public class Target : MonoBehaviour
     public float mySpeed = 1f;
     float baseSpeed = 2f;
 
-    int baseHealth = 1;     //HEEEEEEELLLLLLLLPPPPPPPPPPP
+    int baseHealth;     //HEEEEEEELLLLLLLLPPPPPPPPPPP
     public int health;
 
     public Transform moveToPos; //Needed for all patrols
     Transform startPos;         //Needed for loop patrol movement
     Transform endPos;           //Needed for loop patrol movement
+
+    Vector3 size1 = new Vector3 (0.2f, 1, 1);
+    Vector3 size2 = new Vector3(0.2f, 2, 2);
+    Vector3 size3 = new Vector3(0.2f, 3, 3);
 
     void Start()
     {
@@ -29,24 +33,24 @@ public class Target : MonoBehaviour
         switch(myTargetSize)
         {
             case TargetSize.Small:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor;
+                transform.localScale = size1;
                 mySpeed = baseSpeed * 3;
                 myPatrol = PatrolType.Random;
-                health = baseHealth;
+                health = 0;
                 //myDistance = moveDistance;
                 break;
             case TargetSize.Medium:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor * 2;
+                transform.localScale = size2;
                 mySpeed = baseSpeed * 2;
                 myPatrol = PatrolType.Random;
-                health = baseHealth * 3;
+                health = 1;
                 //myDistance = moveDistance * 2;
                 break;
             case TargetSize.Large:
-                transform.localScale = new Vector3(0.02f, 1f, 1f) * scaleFactor * 3;
+                transform.localScale = size3;
                 mySpeed = baseSpeed;
                 myPatrol = PatrolType.Random;
-                health = baseHealth * 5;
+                health = 2;
                 //myDistance = moveDistance * 4;
                 break;
 
@@ -70,14 +74,26 @@ public class Target : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
             StopAllCoroutines();
 
-        //if(Input.GetKeyDown(KeyCode.R))
-            //ChangeTargetSize();
+        if (Input.GetKeyDown(KeyCode.R))
+            ChangeTargetSize();
     }
 
-    /*void ChangeTargetSize()
+    void ChangeTargetSize()
     {
-        transform.localScale = Random.Range(0, 3);
-    }*/
+        float rnd = Random.Range(1, 3);
+        if(rnd == 1)
+        {
+            transform.localScale = size1;
+        }
+        if (rnd == 2)
+        {
+            transform.localScale = size2;
+        }
+        if (rnd == 3)
+        {
+            transform.localScale = size3;
+        }
+    }
 
     IEnumerator Move()
     {
