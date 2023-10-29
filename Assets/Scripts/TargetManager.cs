@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TargetSize {Small, Medium, Large}
+public enum PatrolType {Random}
 
 public class TargetManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class TargetManager : MonoBehaviour
 
         int rnd = Random.Range(0, targetTypes.Length);
         GameObject target = Instantiate(targetTypes[rnd], spawnPoints[i].position, spawnPoints[i].rotation);
+        //targets.Add(target);
 
        } 
     }
@@ -47,6 +49,11 @@ public class TargetManager : MonoBehaviour
     public void ShowTargetCount()
     {
         print("Number of targets: " + targets.Count);
+    }
+
+    public Transform GetRandomSpawnPoint()
+    {
+        return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
     
 }
