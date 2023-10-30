@@ -111,12 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TM: {fileID: 0}
-  myTargetSize: 0
+  myTargetSize: 1
   myPatrol: 0
   myDistance: 1
   mySpeed: 1
   health: 0
   moveToPos: {fileID: 0}
-  size1: {x: 0.2, y: 1, z: 1}
-  size2: {x: 0.2, y: 2, z: 2}
-  size3: {x: 0.2, y: 3, z: 3}

@@ -7,21 +7,19 @@ public class Target : MonoBehaviour
     public TargetManager _TM;
     public TargetSize myTargetSize;
     public PatrolType myPatrol;
-    float scaleFactor = 1;
-    float moveDistance = 350;
-    public float myDistance = 1;
+    //float scaleFactor = 1;
 
     public float mySpeed = 1f;
     float baseSpeed = 2f;
 
-    int baseHealth;     //HEEEEEEELLLLLLLLPPPPPPPPPPP
+    //int baseHealth;     
     public int health;
 
     public Transform moveToPos; //Needed for all patrols
     Transform startPos;         //Needed for loop patrol movement
     Transform endPos;           //Needed for loop patrol movement
 
-    Vector3 size1 = new Vector3 (0.2f, 1, 1);
+    Vector3 size1 = new Vector3(0.2f, 1, 1);    //Size variables to change the size of the targets
     Vector3 size2 = new Vector3(0.2f, 2, 2);
     Vector3 size3 = new Vector3(0.2f, 3, 3);
 
@@ -37,21 +35,18 @@ public class Target : MonoBehaviour
                 mySpeed = baseSpeed * 3;
                 myPatrol = PatrolType.Random;
                 health = 0;
-                //myDistance = moveDistance;
                 break;
             case TargetSize.Medium:
                 transform.localScale = size2;
                 mySpeed = baseSpeed * 2;
                 myPatrol = PatrolType.Random;
                 health = 1;
-                //myDistance = moveDistance * 2;
                 break;
             case TargetSize.Large:
                 transform.localScale = size3;
                 mySpeed = baseSpeed;
                 myPatrol = PatrolType.Random;
                 health = 2;
-                //myDistance = moveDistance * 4;
                 break;
 
         }
@@ -80,18 +75,21 @@ public class Target : MonoBehaviour
 
     void ChangeTargetSize()
     {
-        float rnd = Random.Range(1, 3);
+        float rnd = Random.Range(1, 4);
         if(rnd == 1)
         {
             transform.localScale = size1;
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
         }
         if (rnd == 2)
         {
             transform.localScale = size2;
+            gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         }
         if (rnd == 3)
         {
             transform.localScale = size3;
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
         }
     }
 
