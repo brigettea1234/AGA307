@@ -5,7 +5,7 @@ using UnityEngine;
 public enum TargetSize {Small, Medium, Large}
 public enum PatrolType {Random}
 
-public class TargetManager : MonoBehaviour
+public class TargetManager : Singleton<TargetManager>
 {
     public Transform[] spawnPoints;
     public string[] targetNames;
@@ -55,5 +55,12 @@ public class TargetManager : MonoBehaviour
     {
         return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
+
+    public void TargetDied(Target _target)
+    {
+        targets.Remove(_target.gameObject);
+        print(targets.Count);
+    }
     
+   
 }

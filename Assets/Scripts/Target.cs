@@ -14,6 +14,8 @@ public class Target : MonoBehaviour
 
     //int baseHealth;     
     public int health;
+    public int myScore;
+
 
     public Transform moveToPos; //Needed for all patrols
     Transform startPos;         //Needed for loop patrol movement
@@ -35,18 +37,21 @@ public class Target : MonoBehaviour
                 mySpeed = baseSpeed * 3;
                 myPatrol = PatrolType.Random;
                 health = 0;
+                //myScore = 100;      
                 break;
             case TargetSize.Medium:
                 transform.localScale = size2;
                 mySpeed = baseSpeed * 2;
                 myPatrol = PatrolType.Random;
                 health = 1;
+                //myScore = 50;
                 break;
             case TargetSize.Large:
                 transform.localScale = size3;
                 mySpeed = baseSpeed;
                 myPatrol = PatrolType.Random;
                 health = 2;
+                //myScore = 25;
                 break;
 
         }
@@ -71,6 +76,27 @@ public class Target : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             ChangeTargetSize();
+
+        //if(Input.GetKeyDown(KeyCode.H))
+            //Hit(100);
+    }
+
+    public void Hit(int _damage)
+    {
+        health -= _damage;
+        GameManager.INSTANCE.AddScore(100);
+
+        if (health <= 0)
+            Die();
+    }
+
+    public void Die()
+    {
+        GameManager.INSTANCE.AddScore(100);
+        TargetManager.INSTANCE.TargetDied(this);
+        StopAllCoroutines();
+        //Destory(this.gameObject); //HELP
+        UnityEngine.Object.Destroy(this.gameObject);
     }
 
     void ChangeTargetSize()
@@ -80,6 +106,7 @@ public class Target : MonoBehaviour
         {
             transform.localScale = size1;
             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            
         }
         if (rnd == 2)
         {

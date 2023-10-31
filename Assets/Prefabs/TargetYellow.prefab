@@ -113,7 +113,7 @@ MonoBehaviour:
   _TM: {fileID: 0}
   myTargetSize: 1
   myPatrol: 0
-  myDistance: 1
   mySpeed: 1
   health: 0
+  myScore: 0
   moveToPos: {fileID: 0}
