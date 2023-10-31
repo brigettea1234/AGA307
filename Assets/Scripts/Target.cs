@@ -35,6 +35,9 @@ public class Target : MonoBehaviour
         SetupAi();
     }
 
+    /// <summary>
+    /// Holds the switch information
+    /// </summary>
     private void Establish()
     {
         switch (myTargetSize)
@@ -80,17 +83,15 @@ public class Target : MonoBehaviour
             StopAllCoroutines();
 
         if (Input.GetKeyDown(KeyCode.R))
-            ChangeTargetSize();
-
-        //if(Input.GetKeyDown(KeyCode.H))
-        //    Hit(100);
+            ChangeTargetSize();      
     }
+
 
     public void Hit(int _damage)
     {
         health -= _damage;
         
-
+        //If target's health is less than 0, AddScore and then destroy target
         if (health <= 0)
         {
             GameManager.INSTANCE.AddScore(myScore);

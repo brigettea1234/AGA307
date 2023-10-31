@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public bool canDestroy;
+    public bool canDestroy;         
     public bool isExplosive;
     public GameObject explosion;
     
@@ -15,6 +15,10 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject, 5);
     }
 
+    /// <summary>
+    /// Waits 0.3 seconds before destroying the target
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WaitToTurnOnDestroy()
     {
         yield return new WaitForSeconds(0.3f);
