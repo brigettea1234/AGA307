@@ -24260,3 +24260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c2618865c7db04f8fa754cea5bec04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDestroy: 0
+  isExplosive: 0
+  explosion: {fileID: 0}
