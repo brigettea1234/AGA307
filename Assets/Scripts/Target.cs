@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : GameBehaviour
 {
-    public TargetManager _TM;
     public TargetSize myTargetSize;
     public PatrolType myPatrol;
     //float scaleFactor = 1;
@@ -27,7 +26,6 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        _TM = FindObjectOfType<TargetManager>();
         StartCoroutine(Move());
 
         Establish();

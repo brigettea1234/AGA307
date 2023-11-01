@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastTriggerPad : MonoBehaviour
+public class RaycastTriggerPad : GameBehaviour
 {
     public GameObject triggeredObject;
     int propertyNumber = 1;

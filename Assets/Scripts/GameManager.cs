@@ -33,5 +33,6 @@ public class GameManager : Singleton<GameManager>
     public void AddScore(int _points)
     {
         score += _points * scoreMultiplier;
+        _UI.UpdateScore(score);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public enum TargetSize {Small, Medium, Large}
 public enum PatrolType {Random}
@@ -14,7 +15,8 @@ public class TargetManager : Singleton<TargetManager>
 
    public void Start()
     {
-        SpawnAtRandom();
+        //SpawnAtRandom();
+        StartCoroutine(SpawnTargetAtRandom());
         
     }
 
@@ -28,12 +30,12 @@ public class TargetManager : Singleton<TargetManager>
     {
         for (int i = 0; i < spawnPoints.Length; i++)
        {
-
         int rnd = Random.Range(0, targetTypes.Length);
         GameObject target = Instantiate(targetTypes[rnd], spawnPoints[i].position, spawnPoints[i].rotation);
-        //targets.Add(target);
-
+        targets.Add(target);
        } 
+       ShowTargetCount();
+       
     }
 
     public void SpawnAtRandom()
@@ -46,9 +48,28 @@ public class TargetManager : Singleton<TargetManager>
     
     }
 
+    IEnumerator SpawnTargetAtRandom()    //Delay
+    {
+        //Coroutine loop
+        for (int i = 0; i < targetTypes.Length; i++)
+        {
+            int rndTarget = Random.Range(0, targetTypes.Length);
+            int rndSpawn = Random.Range(0, spawnPoints.Length);
+            GameObject target = Instantiate(targetTypes[rndTarget], spawnPoints[rndSpawn].position, spawnPoints[rndSpawn].rotation);
+            targets.Add(target);
+            //SetEnemyName(enemy);
+            ShowTargetCount();
+            yield return new WaitForSeconds(4);
+        }
+        StartCoroutine(SpawnTargetAtRandom());
+        ShowTargetCount();
+        
+    }
+
     public void ShowTargetCount()
     {
-        print("Number of targets: " + targets.Count);
+        //print("Number of targets: " + targets.Count);
+        _UI.UpdateTargetCount(targets.Count);
     }
 
     public Transform GetRandomSpawnPoint()
@@ -59,7 +80,9 @@ public class TargetManager : Singleton<TargetManager>
     public void TargetDied(Target _target)
     {
         targets.Remove(_target.gameObject);
-        print(targets.Count);
+        //print(targets.Count);
+        //targets.Add(target);
+        ShowTargetCount();
     }
     
    

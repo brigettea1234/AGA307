@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : GameBehaviour
 {
     public bool canDestroy;         
     public bool isExplosive;
