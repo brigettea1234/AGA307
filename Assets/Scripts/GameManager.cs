@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState { Title, Playing, Paused, GameOver}
-public enum Difficulty { Easy, Medium, Hard}
+public enum Difficulty { Mixed, Easy, Medium, Hard}
 
 public class GameManager : Singleton<GameManager>
 {
@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
         {
             case Difficulty.Easy:
                 scoreMultiplier = 1;
+
                 break;
             case Difficulty.Medium:
                 scoreMultiplier = 2;
@@ -29,7 +30,24 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    
+    public void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.Z))
+            difficulty = Difficulty.Mixed;
+
+        if (Input.GetKeyDown(KeyCode.X))
+            difficulty = Difficulty.Easy;
+
+        if (Input.GetKeyDown(KeyCode.C))
+            difficulty = Difficulty.Medium;
+
+        if (Input.GetKeyDown(KeyCode.V))
+            difficulty = Difficulty.Hard;
+
+    }
+
+
     public void AddScore(int _points)
     {
         score += _points * scoreMultiplier;
