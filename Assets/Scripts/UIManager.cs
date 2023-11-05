@@ -13,7 +13,7 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         UpdateScore(0);         //Defaults to 0 on start
-        UpdateTime(0);
+        //UpdateTime(0);
         //UpdateTargetCount(0);
         //UpdateDifficulty(string "Easy");
     }
@@ -23,11 +23,13 @@ public class UIManager : Singleton<UIManager>
         scoreText.text = "Score: " + _score.ToString();
     }
 
-    public void UpdateTime(float _time)
+    /*public void UpdateTime(float _time)
     {
         //Convert the float to a string
-        timeText.text = _time.ToString("F2"); //F stands for float + 2 decimals
-    }
+        //timeText.text = _time.ToString("F2"); //F stands for float + 2 decimals
+        //0:00 for the minutes, 1:00 for the seconds
+        //timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }*/
 
     public void UpdateTargetCount(int _count)
     {

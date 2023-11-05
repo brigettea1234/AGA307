@@ -28,7 +28,7 @@ public class Timer : GameBehaviour
 
         if (currentTime < 0) { currentTime = 0; StopTimer(); }
 
-        _UI.UpdateTime(currentTime);
+        //_UI.UpdateTime(currentTime);
     }
 
     /// <summary>

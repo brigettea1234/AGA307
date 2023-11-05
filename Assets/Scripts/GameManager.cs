@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
 
     public GameState gameState;
     public Difficulty difficulty;
+    float currentTime;
+    //public float bonusTime = 5f;
 
     void Start()
     {
@@ -53,4 +55,18 @@ public class GameManager : Singleton<GameManager>
         score += _points * scoreMultiplier;
         _UI.UpdateScore(score);
     }
+
+    /*/// <summary>
+    /// Increment our timer
+    /// </summary>
+    /// <param name="_increment">The amount to increment our timer</param>
+    public void IncrementTimer(float _increment)
+    {
+        currentTime += 5;
+    }
+
+    public void IncrementTimer(float _bonusTime)
+    {
+        currentTime = currentTime + _bonusTime;
+    }*/
 }

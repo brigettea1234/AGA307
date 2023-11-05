@@ -93,7 +93,9 @@ public class Target : GameBehaviour
         if (health <= 0)
         {
             GameManager.INSTANCE.AddScore(myScore);
+            //GameManager.INSTANCE.IncrementTimer(5);
             Die();
+            
         }
 
     }
@@ -102,9 +104,11 @@ public class Target : GameBehaviour
     {
         GameManager.INSTANCE.AddScore(100);
         TargetManager.INSTANCE.TargetDied(this);
+        //_GM.IncrementTimer(5);
         StopAllCoroutines();
         //Destory(this.gameObject); //HELP
         UnityEngine.Object.Destroy(this.gameObject);
+
     }
 
     void ChangeTargetSize()
@@ -132,6 +136,20 @@ public class Target : GameBehaviour
             transform.localScale = size3;
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
         }
+    }
+
+    void DifficultySwitch()
+    {
+        
+        if(_GM.difficulty == Difficulty.Easy)
+        {
+            myTargetSize = TargetSize.Large;
+            Establish();
+            transform.localScale = size3;
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            
+        }
+        
     }
 
     IEnumerator Move()
