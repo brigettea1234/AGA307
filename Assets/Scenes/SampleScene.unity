@@ -1443,6 +1443,7 @@ MonoBehaviour:
   score: 0
   gameState: 1
   difficulty: 0
+  bonusTime: 5
 --- !u!1 &913295149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +2845,10 @@ PrefabInstance:
     - target: {fileID: 2545494667495897440, guid: 213b9dad7c93a48fcb32727e579f169c, type: 3}
       propertyPath: m_Name
       value: TargetBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545494667495897441, guid: 213b9dad7c93a48fcb32727e579f169c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2545494667495897452, guid: 213b9dad7c93a48fcb32727e579f169c, type: 3}
       propertyPath: m_RootOrder
