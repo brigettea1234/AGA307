@@ -81,7 +81,9 @@ public class Target : GameBehaviour
             StopAllCoroutines();
 
         if (Input.GetKeyDown(KeyCode.R))
-            ChangeTargetSize();      
+            ChangeTargetSize();
+        //Not optimised well. Should use event system. But works for now :)
+        CheckDifficulty();
     }
 
 
@@ -107,6 +109,7 @@ public class Target : GameBehaviour
         //_GM.IncrementTimer(5);
         StopAllCoroutines();
         //Destory(this.gameObject); //HELP
+        _TIME.timeValue += 5;
         UnityEngine.Object.Destroy(this.gameObject);
 
     }
@@ -183,6 +186,34 @@ public class Target : GameBehaviour
         transform.Rotate(Vector3.up * 180);
         yield return new WaitForSeconds(Random.Range(1, 3));
         StartCoroutine(Move());*/
+    }
+
+    public void CheckDifficulty()
+    {
+        if(_GM.difficulty == Difficulty.Easy)
+        {
+            if(myTargetSize != TargetSize.Large)
+            {
+                _TM.targets.Remove(gameObject);
+                Destroy(gameObject);
+            }
+        }
+        if (_GM.difficulty == Difficulty.Medium)
+        {
+            if (myTargetSize != TargetSize.Medium)
+            {
+                _TM.targets.Remove(gameObject);
+                Destroy(gameObject);
+            }
+        }
+        if (_GM.difficulty == Difficulty.Hard)
+        {
+            if (myTargetSize != TargetSize.Small)
+            {
+                _TM.targets.Remove(gameObject);
+                Destroy(gameObject);
+            }
+        }
     }
 
     //public int health = 5;

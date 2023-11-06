@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Timer2 : GameBehaviour
+public class Timer2 : Singleton<Timer2>
 {
     public float timeValue = 30;
     public TMP_Text timeText;

@@ -15,7 +15,7 @@ public class UIManager : Singleton<UIManager>
         UpdateScore(0);         //Defaults to 0 on start
         //UpdateTime(0);
         //UpdateTargetCount(0);
-        //UpdateDifficulty(string "Easy");
+        UpdateDifficulty(_GM.difficulty.ToString());
     }
 
     public void UpdateScore(int _score)
@@ -36,8 +36,14 @@ public class UIManager : Singleton<UIManager>
         targetCountText.text = "Target Count: " + _count.ToString();
     }
 
-    /*public void UpdateDifficulty(string _difficulty)
+    public void UpdateDifficulty(string _difficulty)
     {
-        
-    }*/
+        difficultyText.text = "Difficulty: " + _difficulty;
+    }
+
+    //public int GenerateRandomNumber()
+    //{
+    //    int rnd = Random.Range(0, 5);
+    //    return rnd;
+    //}
 }

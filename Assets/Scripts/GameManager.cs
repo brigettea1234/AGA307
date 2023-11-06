@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public enum GameState { Title, Playing, Paused, GameOver}
 public enum Difficulty { Mixed, Easy, Medium, Hard}
@@ -36,16 +37,35 @@ public class GameManager : Singleton<GameManager>
     {
         
         if (Input.GetKeyDown(KeyCode.Z))
+        {
             difficulty = Difficulty.Mixed;
+            _UI.UpdateDifficulty(difficulty.ToString());
+
+        }
+
 
         if (Input.GetKeyDown(KeyCode.X))
+        {
             difficulty = Difficulty.Easy;
+            _UI.UpdateDifficulty(difficulty.ToString());
+
+        }
+
 
         if (Input.GetKeyDown(KeyCode.C))
+        {
             difficulty = Difficulty.Medium;
+            _UI.UpdateDifficulty(difficulty.ToString());
+        }
+
 
         if (Input.GetKeyDown(KeyCode.V))
+        {
             difficulty = Difficulty.Hard;
+            _UI.UpdateDifficulty(difficulty.ToString());
+
+        }
+
 
     }
 
