@@ -6,6 +6,7 @@ public class WeaponManager : GameBehaviour
 {
     public float weaponIndicator;
     public GameObject[] weapons;
+    public string[] weaponName;
 
     void Start()
     {
@@ -34,9 +35,9 @@ public class WeaponManager : GameBehaviour
 
         weapons[index].SetActive(true);
 
-        weaponIndicator = index;
+        //weaponIndicator = index;
 
-        print("Current weapon: " + weaponIndicator);
+        print("Current weapon: " + (weaponName[index]));
 
     }
 
