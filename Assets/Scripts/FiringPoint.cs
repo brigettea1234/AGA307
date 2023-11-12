@@ -11,6 +11,7 @@ public class FiringPoint : GameBehaviour
 
     public float projectileIndicator;
     public GameObject[] projectiles;
+    public string[] projectileName;
     public float projectileSpeed = 1000f;
     public GameObject[] hitSparksProjectiles;
 
@@ -51,9 +52,9 @@ public class FiringPoint : GameBehaviour
 
         projectiles[index].SetActive(true);
 
-        projectileIndicator = index;
+        //projectileIndicator = index;
 
-        print("Current projectile: " + projectileIndicator);
+        print("Current projectile: " + (projectileName[index]));
 
     }
     
