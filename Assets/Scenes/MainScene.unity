@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -377,6 +377,10 @@ MonoBehaviour:
   - {fileID: 1324031800}
   - {fileID: 1288220309}
   - {fileID: 201002751}
+  weaponName:
+  - Silly red weapon
+  - Silly blue weapon
+  - Fireball!
 --- !u!1 &201002751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3430311720407132136, guid: 4d87e7418f0c741d7812e400f18c9b08, type: 3}
@@ -537,6 +541,10 @@ MonoBehaviour:
   - {fileID: 947250871755532473, guid: 473d079eb020ad24184a63656bf54144, type: 3}
   - {fileID: 7624496878921423553, guid: 7ba892263bec55a45b3073eb74e7dc9a, type: 3}
   - {fileID: 4771011118064378264, guid: d5a339be31649b643a20c1f600720768, type: 3}
+  projectileName:
+  - Silly red stars
+  - Silly blue stars
+  - Fireball!
   projectileSpeed: 1000
   hitSparksProjectiles: []
   hitSparks: {fileID: 8652319566727268765, guid: 5b66f1485b200924d9bb87052fd6c380, type: 3}

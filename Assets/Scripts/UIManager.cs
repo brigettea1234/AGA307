@@ -9,8 +9,8 @@ public class UIManager : Singleton<UIManager>
     public TMP_Text timeText;
     public TMP_Text targetCountText;
     public TMP_Text difficultyText;
-    public TMP_Text weaponSelectedText;
-    public TMP_Text projectileText;
+    //public TMP_Text weaponSelectedText;
+    //public TMP_Text projectileText;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class UIManager : Singleton<UIManager>
         //UpdateTime(0);
         //UpdateTargetCount(0);
         UpdateDifficulty(_GM.difficulty.ToString());
-        UpdateWeapon(_GM.weapon.ToString());
+        
     }
 
     public void UpdateScore(int _score)
@@ -36,15 +36,7 @@ public class UIManager : Singleton<UIManager>
         difficultyText.text = "Difficulty: " + _difficulty;
     }
 
-    public void UpdateWeapon(string _weapon)
-    {
-        weaponSelectedText.text = "Weapon Selected: " + _weapon;
-    }
-
-    public void UpdateProjectile(int _projectile)
-    {
-
-    }
+    
 
     //public int GenerateRandomNumber()
     //{
