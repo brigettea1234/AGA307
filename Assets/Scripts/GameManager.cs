@@ -76,6 +76,11 @@ public class GameManager : Singleton<GameManager>
         _UI.UpdateScore(score);
     }
 
+    public void ChangeGameState(GameState _gameState)
+    {
+        gameState = _gameState;
+    }
+
     /*/// <summary>
     /// Increment our timer
     /// </summary>
